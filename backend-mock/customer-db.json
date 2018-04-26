@@ -1,0 +1,11 @@
+{
+  "customers-api": [
+    {
+      "name": "Jan",
+      "surname": "Kowalski",
+      "address": "Test1",
+      "telephoneNumber": "123",
+      "id": 4
+    }
+  ]
+}

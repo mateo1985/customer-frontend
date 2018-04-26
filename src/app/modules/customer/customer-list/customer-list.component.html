@@ -1,0 +1,48 @@
+<button mat-raised-button color="primary" (click)="refresh()">
+  <i class="material-icons">autorenew</i>
+</button>
+<button mat-raised-button color="primary" (click)="add()">
+  <i class="material-icons">add</i>
+</button>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="surname">
+      <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telephoneNumber">
+      <mat-header-cell *matHeaderCellDef> Telephone number </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.telephoneNumber}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="remove">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-raised-button color="accent" (click)="remove(element.id)"><i class="material-icons">delete</i></button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-raised-button color="primary" (click)="edit(element)"><i class="material-icons">mode_edit</i></button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

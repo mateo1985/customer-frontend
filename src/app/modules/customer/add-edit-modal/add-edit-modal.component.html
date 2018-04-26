@@ -1,0 +1,51 @@
+<h1 mat-dialog-title *ngIf="data.id">Add customer</h1>
+<h1 mat-dialog-title *ngIf="data.id">Update customer</h1>
+
+<div mat-dialog-content>
+  <form (ngSubmit)="submit()" [formGroup]="customerForm" class="customer-form-content">
+    <mat-form-field>
+      <input  placeholder="Name" matInput formControlName="name">
+      <mat-error *ngIf="customerForm.get('name').hasError('required')">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="customerForm.get('name').hasError('requiredLength')">
+        Name is too short
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input  placeholder="Surname" matInput formControlName="surname">
+      <mat-error *ngIf="customerForm.get('surname').hasError('required')">
+        Surname is required
+      </mat-error>
+      <mat-error *ngIf="customerForm.get('surname').hasError('requiredLength')">
+        Surname is too short
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input  placeholder="Telephone Number" matInput formControlName="telephoneNumber">
+      <mat-error *ngIf="customerForm.get('telephoneNumber').hasError('required')">
+        Telephone number is required
+      </mat-error>
+      <mat-error *ngIf="customerForm.get('telephoneNumber').hasError('requiredLength')">
+        Telephone number is too short
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input placeholder="Address" matInput formControlName="address">
+      <mat-error *ngIf="customerForm.get('address').hasError('required')">
+        Address is required
+      </mat-error>
+      <mat-error *ngIf="customerForm.get('address').hasError('requiredLength')">
+        Address is too short
+      </mat-error>
+    </mat-form-field>
+
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button (click)="saveUser()" cdkFocusInitial >Submit</button> <!--[mat-dialog-close]="data"-->
+    </div>
+  </form>
+
+</div>
+

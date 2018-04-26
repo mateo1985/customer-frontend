@@ -1,0 +1,8 @@
+.customer-form-content {
+  display: flex;
+  flex-flow: column;
+}
+
+.mat-dialog-content {
+  overflow: hidden;
+}
