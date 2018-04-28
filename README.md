@@ -1,4 +1,4 @@
-#Customers Management Studio#
+# Customers Management Studio #
 
 This is example application for customer management
 
@@ -8,7 +8,7 @@ Instructions how to run project:
 
 To be able to run the tests you should invoke the `npm run test`
 
-#TODO:#
+# TODO: #
 There are a lot of things to do to productize this application.
 
 - The unit tests and component tests - there are only few tests for component and for service
