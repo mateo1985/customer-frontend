@@ -1,6 +1,7 @@
 # Customers Management Studio #
 
-This is example application for customer management
+This is example application for customer management. The CustomerModule is placed in `src/app/modules/customer`.
+
 
 Instructions how to run project:
 1) Install modules: `npm install`
