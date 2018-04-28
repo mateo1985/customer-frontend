@@ -5,6 +5,9 @@ This is example application for customer management
 Instructions how to run project:
 1) Install modules: `npm install`
 2) Run the application: `npm start`
+3) Run the web browser and type `http://localhost:4200`
+
+The mocked backend is under `localhost:3000`
 
 To be able to run the tests you should invoke the `npm run test`
 
