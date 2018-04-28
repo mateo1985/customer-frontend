@@ -13,6 +13,13 @@
       "surname": "Kowalski",
       "address": "Zdziechów 1111",
       "telephoneNumber": "+48123456"
+    },
+    {
+      "name": "Boleslaw",
+      "surname": "Chrobry",
+      "address": "Kraków",
+      "telephoneNumber": "00000000",
+      "id": 55
     }
   ]
 }
