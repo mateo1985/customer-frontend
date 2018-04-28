@@ -1,8 +1,9 @@
-<h1 mat-dialog-title *ngIf="data.id">Add customer</h1>
+<h1 mat-dialog-title *ngIf="!data.id">Add customer</h1>
 <h1 mat-dialog-title *ngIf="data.id">Update customer</h1>
 
+
 <div mat-dialog-content>
-  <form (ngSubmit)="submit()" [formGroup]="customerForm" class="customer-form-content">
+  <form (ngSubmit)="submit($event)" [formGroup]="customerForm" class="customer-form-content">
     <mat-form-field>
       <input  placeholder="Name" matInput formControlName="name">
       <mat-error *ngIf="customerForm.get('name').hasError('required')">
@@ -10,6 +11,9 @@
       </mat-error>
       <mat-error *ngIf="customerForm.get('name').hasError('requiredLength')">
         Name is too short
+      </mat-error>
+      <mat-error *ngIf="customerForm.get('name').hasError('pattern')">
+        Name is incorrect
       </mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -20,6 +24,9 @@
       <mat-error *ngIf="customerForm.get('surname').hasError('requiredLength')">
         Surname is too short
       </mat-error>
+      <mat-error *ngIf="customerForm.get('surname').hasError('pattern')">
+        Surname is incorrect
+      </mat-error>
     </mat-form-field>
     <mat-form-field>
       <input  placeholder="Telephone Number" matInput formControlName="telephoneNumber">
@@ -28,6 +35,9 @@
       </mat-error>
       <mat-error *ngIf="customerForm.get('telephoneNumber').hasError('requiredLength')">
         Telephone number is too short
+      </mat-error>
+      <mat-error *ngIf="customerForm.get('telephoneNumber').hasError('pattern')">
+        Telephone is incorrect
       </mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -41,9 +51,9 @@
     </mat-form-field>
 
 
-    <div mat-dialog-actions>
-      <button mat-button (click)="onNoClick()">Cancel</button>
-      <button mat-button (click)="saveUser()" cdkFocusInitial >Submit</button> <!--[mat-dialog-close]="data"-->
+    <div>
+      <button mat-button mat-dialog-close (click)="onNoClick($event)">Cancel</button>
+      <button mat-button (click)="saveUser()" cdkFocusInitial >Submit</button>
     </div>
   </form>
 

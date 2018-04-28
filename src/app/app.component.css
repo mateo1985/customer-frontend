@@ -1,0 +1,12 @@
+.main-container {
+  height: 90%;
+  width: 100%;
+}
+
+.link-active {
+  background-color: gray;
+}
+
+.link-active:hover {
+  background-color: lightgray;
+}

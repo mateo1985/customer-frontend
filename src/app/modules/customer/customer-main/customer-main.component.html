@@ -1,0 +1,18 @@
+<mat-drawer-container class="customers-list" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <app-actions></app-actions>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+
+    <div class="sidenav-expander">
+      <button mat-icon-button color="warn" (click)="drawer.toggle()">
+        <mat-icon *ngIf="!showSidenav" aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+        <mat-icon *ngIf="showSidenav" aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+    <app-customer-list class="customer-table"></app-customer-list>
+  </div>
+
+</mat-drawer-container>
+

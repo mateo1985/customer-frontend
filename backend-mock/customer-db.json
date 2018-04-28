@@ -1,11 +1,18 @@
 {
   "customers-api": [
     {
+      "name": "Mateusz",
+      "surname": "Malik",
+      "address": "Władysława Łokietka 166B",
+      "telephoneNumber": "+48600357136",
+      "id": 53
+    },
+    {
+      "id": 54,
       "name": "Jan",
       "surname": "Kowalski",
-      "address": "Test1",
-      "telephoneNumber": "123",
-      "id": 4
+      "address": "Zdziechów 1111",
+      "telephoneNumber": "+48123456"
     }
   ]
 }

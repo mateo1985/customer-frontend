@@ -1,11 +1,31 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Custom Toolbar</span>
-  </mat-toolbar-row>
-  <mat-toolbar-row>
-    <router-outlet></router-outlet>
-  </mat-toolbar-row>
 
-</mat-toolbar>
+
+
+<div class="menu-conainer">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      Capgemini example project
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLinkActive="link-active" routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </a>
+        <a mat-menu-item routerLinkActive="link-active" routerLink="/customers">
+          <mat-icon>account_circle</mat-icon>
+          <span>Customers</span>
+        </a>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
+
+
+
 
 
