@@ -12,6 +12,7 @@ import {CustomerApiService} from '../services/customer-api.service';
 })
 export class AddEditModalComponent {
   private static readonly PhoneRegexRule = `^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$`;
+  private static readonly NameValidationRule = `[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]*`;
   customerForm: FormGroup;
 
   constructor(public dialogRef: MatDialogRef<AddEditModalComponent>,
@@ -22,9 +23,9 @@ export class AddEditModalComponent {
 
     this.customerForm = this.fb.group({
       name: [ data.name,
-        [Validators.required, Validators.minLength(2), Validators.pattern(`^[a-zA-Z\-]+$`)]],
+        [Validators.required, Validators.minLength(2), Validators.pattern(AddEditModalComponent.NameValidationRule)]],
       surname: [ data.surname,
-        [Validators.required, Validators.minLength(2), Validators.pattern(`^[a-zA-Z\-]+$`)]],
+        [Validators.required, Validators.minLength(2), Validators.pattern(AddEditModalComponent.NameValidationRule)]],
       address: [ data.address,
         [Validators.required, Validators.minLength(2)]],
       telephoneNumber: [ data.telephoneNumber,

@@ -20,6 +20,13 @@
       "address": "Kraków",
       "telephoneNumber": "00000000",
       "id": 55
+    },
+    {
+      "name": "Łukasz",
+      "surname": "Malik",
+      "address": "Texas",
+      "telephoneNumber": "+481231132",
+      "id": 56
     }
   ]
 }
